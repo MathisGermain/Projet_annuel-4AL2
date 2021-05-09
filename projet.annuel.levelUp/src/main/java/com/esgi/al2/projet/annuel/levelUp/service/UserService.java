@@ -20,4 +20,11 @@ public class UserService {
         throw new Exception("This email is already used by an other user");
     }
 
+    public Optional<User> findById(String id) {
+        return userRepository.findById(id);
+    }
+
+    public Optional<User> findByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
 }

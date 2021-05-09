@@ -3,10 +3,9 @@ package com.esgi.al2.projet.annuel.levelUp.controller;
 import com.esgi.al2.projet.annuel.levelUp.model.User;
 import com.esgi.al2.projet.annuel.levelUp.service.UserService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 
 @RestController
@@ -25,5 +24,11 @@ public class UserController {
     {
 
     }
+
+    @GetMapping("/{id}")
+    public Optional<User> findById(@PathVariable String id){return userService.findById(id);}
+
+    @GetMapping("/username/{username}")
+    public Optional<User> findByUsername(@PathVariable String username){return userService.findByUsername(username);}
 
 }
