@@ -1,61 +1,46 @@
 package com.esgi.al2.projet.annuel.levelUp.model;
 
-import org.jetbrains.annotations.NotNull;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
-@Entity (name = "user")
+
+@Data
+@Entity (name = "users")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator"
+    )
+    @Column(updatable = false, nullable = false)
+    private String id;
 
-    @NotNull()
+    @Column
+    @NotNull(message = "First name is required")
     private String username;
 
-    @NotNull()
+    @Column
+    @NotNull(message = "First name is required")
     private String firstName;
 
-    @NotNull()
+    @Column
+    @NotNull(message = "last name is required")
     private String lastName;
 
-    @NotNull()
+    @Column
+    @NotNull(message = "password is required")
     private String password;
 
-    @NotNull()
+    @Column
+    @NotNull(message = "email is required")
     private String email;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public @NotNull String getUsername() {
-        return username;
-    }
-
-    public void setUsername(@NotNull String username) {
-        this.username = username;
-    }
-
-    public @NotNull String getEmail() {
-        return email;
-    }
-
-    public void setEmail(@NotNull String email) {
-        this.email = email;
-    }
-
-    public @NotNull String getPassword() {
-        return password;
-    }
-
-    public void setPassword(@NotNull String password) {
-        this.password = password;
-    }
-
 }
