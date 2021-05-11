@@ -1,46 +1,84 @@
 package com.esgi.al2.projet.annuel.levelUp.model;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.hibernate.annotations.GenericGenerator;
+import javax.persistence.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-
-
-@Data
 @Entity (name = "users")
 public class User {
 
     @Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(
-            name = "UUID",
-            strategy = "org.hibernate.id.UUIDGenerator"
+    @SequenceGenerator(
+            name = "user_sequence",
+            sequenceName = "user_sequence",
+            allocationSize = 1
     )
-    @Column(updatable = false, nullable = false)
-    private String id;
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "user_sequence"
+    )
 
-    @Column
-    @NotNull(message = "First name is required")
+    @Column(updatable = false, nullable = false)
+    private Integer id;
+
+    @Column(name="username")
     private String username;
 
-    @Column
-    @NotNull(message = "First name is required")
-    private String firstName;
+    @Column(name="first_name")
+    private String firstname;
 
-    @Column
-    @NotNull(message = "last name is required")
-    private String lastName;
+    @Column(name="last_name")
+    private String lastname;
 
-    @Column
-    @NotNull(message = "password is required")
+    @Column(name="password")
     private String password;
 
-    @Column
-    @NotNull(message = "email is required")
+    @Column(name="email")
     private String email;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

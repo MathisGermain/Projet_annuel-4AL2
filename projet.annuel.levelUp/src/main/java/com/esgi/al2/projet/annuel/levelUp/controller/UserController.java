@@ -20,13 +20,14 @@ public class UserController {
     }
 
     @PostMapping("/signin")
-    public void signInUser(User user)
+    public Optional<User> signInUser(@RequestBody String email, @RequestBody String password)
     {
+        return userService.connect(email, password);
 
     }
 
     @GetMapping("/{id}")
-    public Optional<User> findById(@PathVariable String id){return userService.findById(id);}
+    public Optional<User> findById(@PathVariable Integer id){return userService.findById(id);}
 
     @GetMapping("/username/{username}")
     public Optional<User> findByUsername(@PathVariable String username){return userService.findByUsername(username);}

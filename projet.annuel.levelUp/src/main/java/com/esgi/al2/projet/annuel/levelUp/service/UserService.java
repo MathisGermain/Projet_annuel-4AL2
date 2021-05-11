@@ -17,14 +17,22 @@ public class UserService {
         if(!(userRepository.existsByEmail(user.getEmail()) && userRepository.existsByUsername(user.getUsername()))){
             return userRepository.save(user);
         }
-        throw new Exception("This email is already used by an other user");
+        throw new Exception("This user exists yet");
     }
 
-    public Optional<User> findById(String id) {
+    public Optional<User> connect(String email, String password) {
+        Optional<User> user = userRepository.findByEmailAndPassword(email, password);
+
+        return user;
+    }
+
+    public Optional<User> findById(Integer id) {
         return userRepository.findById(id);
     }
 
     public Optional<User> findByUsername(String username) {
         return userRepository.findByUsername(username);
     }
+
+
 }
