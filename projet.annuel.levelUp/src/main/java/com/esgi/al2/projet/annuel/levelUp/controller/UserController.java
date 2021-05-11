@@ -19,8 +19,8 @@ public class UserController {
         return userService.create(user);
     }
 
-    @PostMapping("/signin")
-    public Optional<User> signInUser(@RequestBody String email, @RequestBody String password)
+    @GetMapping("/signin")
+    public Optional<User> signInUser(@RequestParam String email, @RequestParam String password)
     {
         return userService.connect(email, password);
 

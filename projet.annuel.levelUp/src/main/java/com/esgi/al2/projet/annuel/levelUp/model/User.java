@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity (name = "users")
 public class User {
 
-    @Id
+
     @SequenceGenerator(
             name = "user_sequence",
             sequenceName = "user_sequence",
@@ -16,6 +16,7 @@ public class User {
             generator = "user_sequence"
     )
 
+    @Id
     @Column(updatable = false, nullable = false)
     private Integer id;
 

@@ -1,43 +1,76 @@
 package com.esgi.al2.projet.annuel.levelUp.model;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Entity(name = "responses")
 public class Response {
 
-    private int idExercice;
-    private int idUser;
-    private String codeSend;
-    private LocalDateTime sendDate;
 
-    public int getIdExercice() {
-        return idExercice;
+    @SequenceGenerator(
+            name = "response_sequence",
+            sequenceName = "response_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "response_sequence"
+    )
+
+    @OneToOne
+    private User user;
+
+    @OneToOne
+    private Exercise exercise;
+
+    @Id
+    @Column(updatable = false, nullable = false)
+    private Integer id;
+
+    @Column(name="codeSent")
+    private String codeSent;
+
+    @Column(name="date")
+    private LocalDateTime date;
+
+
+    public User getUser() {
+        return user;
     }
 
-    public void setIdExercice(int idExercice) {
-        this.idExercice = idExercice;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public int getIdUser() {
-        return idUser;
+    public Exercise getExercise() {
+        return exercise;
     }
 
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
+    public void setExercise(Exercise exercise) {
+        this.exercise = exercise;
     }
 
-    public String getCodeSend() {
-        return codeSend;
+    public Integer getId() {
+        return id;
     }
 
-    public void setCodeSend(String codeSend) {
-        this.codeSend = codeSend;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public LocalDateTime getSendDate() {
-        return sendDate;
+    public String getCodeSent() {
+        return codeSent;
     }
 
-    public void setSendDate(LocalDateTime sendDate) {
-        this.sendDate = sendDate;
+    public void setCodeSent(String codeSent) {
+        this.codeSent = codeSent;
+    }
+
+    public LocalDateTime getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDateTime date) {
+        this.date = date;
     }
 }
