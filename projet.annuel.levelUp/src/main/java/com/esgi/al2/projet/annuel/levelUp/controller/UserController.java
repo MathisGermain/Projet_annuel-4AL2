@@ -5,6 +5,7 @@ import com.esgi.al2.projet.annuel.levelUp.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -28,6 +29,9 @@ public class UserController {
 
     @GetMapping("/{id}")
     public Optional<User> findById(@PathVariable Integer id){return userService.findById(id);}
+
+    @GetMapping()
+    public List<User> findAll(@PathVariable Integer id){return userService.findAll();}
 
     @GetMapping("/username/{username}")
     public Optional<User> findByUsername(@PathVariable String username){return userService.findByUsername(username);}
