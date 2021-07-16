@@ -7,10 +7,9 @@ import java.util.Optional;
 
 public interface ExerciseRepository extends JpaRepository<Exercise, Integer> {
 
-    Optional<Exercise> findByTitle(String title);
+    Optional<Exercise> findByTitleIgnoreCase(String title);
 
     Optional<Exercise> findById(Integer id);
 
     Boolean existsByTitle(String title);
-
 }

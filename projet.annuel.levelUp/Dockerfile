@@ -18,7 +18,7 @@ RUN apt update && apt install -y docker.io
 ADD utility utility
 ADD utility_c utility_c
 ADD utility_cpp utility_cpp
-ADD utility_py utility_py
+ADD utility_python utility_py
 
 ADD entrypoint.sh entrypoint.sh
 
