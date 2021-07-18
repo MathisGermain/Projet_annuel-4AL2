@@ -15,6 +15,7 @@
 	<description>Projet annuel de 4eme annee, permettant de compiler et executer du code transmis par un utilisateur</description>
 	<properties>
 		<java.version>11</java.version>
+		<jjwt.version>0.9.1</jjwt.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -64,6 +65,11 @@
 			<artifactId>annotations</artifactId>
 			<version>RELEASE</version>
 			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>${jjwt.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esgi.4al2</groupId>

@@ -1,0 +1,11 @@
+package com.esgi.al2.projet.annuel.levelUp.exception;
+
+import org.springframework.http.HttpStatus;
+
+public abstract class ApiBaseException extends RuntimeException{
+    public ApiBaseException(String message) {
+        super(message);
+    }
+
+    public abstract HttpStatus getStatusCode();
+}
