@@ -63,7 +63,7 @@ public class UserController {
     public UserDto findById(@PathVariable Integer id) {return userService.findById(id);}
 
     @GetMapping(
-            value = "/find/{username}",
+            value = "/user/{username}",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @ApiOperation(

@@ -17,7 +17,7 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Entity
-@ApiModel(description = "The returned response")
+@ApiModel(description = "The user's returned response")
 @Table(name = "responses")
 public class Response extends AbstractEntity{
 
@@ -31,15 +31,6 @@ public class Response extends AbstractEntity{
 
     @ApiModelProperty(notes = "Code sent by the user")
     private String codeSent;
-
-    @ApiModelProperty(notes = "The output of the program during the execution")
-    private String output;
-
-    @ApiModelProperty(notes = "The expected output")
-    private String expectedOutput;
-
-    @ApiModelProperty(notes = "The verdict can be one of these : Accepted, Wrong Answer, Compilation Error, Runtime Error, Out Of Memory, Time Limit Exceeded")
-    private String status;
 
     @ApiModelProperty(notes = "Result of the code sent compilation")
     @OneToOne

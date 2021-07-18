@@ -25,13 +25,13 @@ public class ExerciseService {
         this.exerciseRepository = exerciseRepository;
     }
 
-    public ExerciseDto save(ExerciseDto dto){
-        List<String> errors = ExerciseValidator.validate(dto);
+    public ExerciseDto save(ExerciseDto exercise){
+        List<String> errors = ExerciseValidator.validate(exercise);
         if(!errors.isEmpty()) {
             throw new InvalidEntityException("This exercise is not valid", ErrorCode.EXERCISE_NOT_VALID);
         }
 
-        if((exerciseRepository.existsByTitle(dto.getTitle()))){
+        if((exerciseRepository.existsByTitle(exercise.getTitle()))){
             throw new InvalidEntityException(
                     "This exercise exists yet",
                     ErrorCode.EXERCISE_ALREADY_EXISTS,
@@ -39,7 +39,7 @@ public class ExerciseService {
             );
         }
         return ExerciseDto.fromEntity(exerciseRepository.save(
-                ExerciseDto.toEntity(dto)
+                ExerciseDto.toEntity(exercise)
         ));
     }
 
