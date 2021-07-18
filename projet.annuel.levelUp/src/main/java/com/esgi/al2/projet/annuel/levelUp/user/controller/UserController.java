@@ -31,7 +31,7 @@ public class UserController {
     public Optional<User> findById(@PathVariable Integer id){return userService.findById(id);}
 
     @GetMapping()
-    public List<User> findAll(@PathVariable Integer id){return userService.findAll();}
+    public List<User> findAll(){return userService.findAll();}
 
     @GetMapping("/username/{username}")
     public Optional<User> findByUsername(@PathVariable String username){return userService.findByUsername(username);}

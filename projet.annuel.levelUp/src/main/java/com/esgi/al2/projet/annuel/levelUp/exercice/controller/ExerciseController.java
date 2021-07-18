@@ -19,7 +19,7 @@ public class ExerciseController {
         return exerciseService.create(exercise);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Exercise> getAll() {
         return exerciseService.getAll();
     }

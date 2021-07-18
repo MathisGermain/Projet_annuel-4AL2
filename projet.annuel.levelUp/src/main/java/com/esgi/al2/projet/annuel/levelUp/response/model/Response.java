@@ -2,10 +2,16 @@ package com.esgi.al2.projet.annuel.levelUp.response.model;
 
 import com.esgi.al2.projet.annuel.levelUp.exercice.model.Exercise;
 import com.esgi.al2.projet.annuel.levelUp.user.model.User;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity(name = "responses")
 public class Response {
 
@@ -38,43 +44,4 @@ public class Response {
     private LocalDateTime date;
 
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Exercise getExercise() {
-        return exercise;
-    }
-
-    public void setExercise(Exercise exercise) {
-        this.exercise = exercise;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getCodeSent() {
-        return codeSent;
-    }
-
-    public void setCodeSent(String codeSent) {
-        this.codeSent = codeSent;
-    }
-
-    public LocalDateTime getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDateTime date) {
-        this.date = date;
-    }
 }
