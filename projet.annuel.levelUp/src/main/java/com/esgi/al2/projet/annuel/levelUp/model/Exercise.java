@@ -1,66 +1,33 @@
 package com.esgi.al2.projet.annuel.levelUp.model;
 
-import javax.persistence.*;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.util.List;
 
-@Entity (name = "exercises")
-public class Exercise {
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
+@Entity
+@ApiModel(description = "The exercise")
+@Table(name = "exercises")
+public class Exercise extends AbstractEntity{
 
-    @SequenceGenerator(
-            name = "exercise_sequence",
-            sequenceName = "exercise_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "exercise_sequence"
-    )
-
-    @Id
-    @Column(updatable = false, nullable = false)
-    private Integer id;
-
-    @Column(name="title")
+    @ApiModelProperty(notes = "The exercise's title")
     private String title;
 
-    @Column(name="content")
+    @ApiModelProperty(notes = "The exercise's content")
     private String content;
 
-    @ElementCollection
-    @CollectionTable(name="test", joinColumns=@JoinColumn(name="exercise_id"))
-    @Column(name = "test_exercise")
-    private List<String> test;
-
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public List<String> getTest() {
-        return test;
-    }
-
-    public void setTest(List<String> test) {
-        this.test = test;
-    }
+    @ApiModelProperty(notes = "The exercise's reponses")
+    @OneToMany(mappedBy = "exercise")
+    private List<Response> responses;
 }

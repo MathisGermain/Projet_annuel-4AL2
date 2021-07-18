@@ -1,76 +1,47 @@
 package com.esgi.al2.projet.annuel.levelUp.model;
 
-import javax.persistence.*;
-import java.time.LocalDateTime;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
-@Entity(name = "responses")
-public class Response {
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
+@Entity
+@ApiModel(description = "The returned response")
+@Table(name = "responses")
+public class Response extends AbstractEntity{
 
-    @SequenceGenerator(
-            name = "response_sequence",
-            sequenceName = "response_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "response_sequence"
-    )
-
-    @OneToOne
+    @ApiModelProperty(notes = "Author of the response")
+    @ManyToOne
     private User user;
 
-    @OneToOne
+    @ApiModelProperty(notes = "Exercise solved")
+    @ManyToOne
     private Exercise exercise;
 
-    @Id
-    @Column(updatable = false, nullable = false)
-    private Integer id;
-
-    @Column(name="codeSent")
+    @ApiModelProperty(notes = "Code sent by the user")
     private String codeSent;
 
-    @Column(name="date")
-    private LocalDateTime date;
+    @ApiModelProperty(notes = "The output of the program during the execution")
+    private String output;
 
+    @ApiModelProperty(notes = "The expected output")
+    private String expectedOutput;
 
-    public User getUser() {
-        return user;
-    }
+    @ApiModelProperty(notes = "The verdict can be one of these : Accepted, Wrong Answer, Compilation Error, Runtime Error, Out Of Memory, Time Limit Exceeded")
+    private String status;
 
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Exercise getExercise() {
-        return exercise;
-    }
-
-    public void setExercise(Exercise exercise) {
-        this.exercise = exercise;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getCodeSent() {
-        return codeSent;
-    }
-
-    public void setCodeSent(String codeSent) {
-        this.codeSent = codeSent;
-    }
-
-    public LocalDateTime getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDateTime date) {
-        this.date = date;
-    }
+    @ApiModelProperty(notes = "Result of the code sent compilation")
+    @OneToOne
+    private Result result;
 }
