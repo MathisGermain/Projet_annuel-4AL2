@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
@@ -31,6 +32,9 @@ public class Response extends AbstractEntity{
 
     @ApiModelProperty(notes = "Code sent by the user")
     private String codeSent;
+
+    @ApiModelProperty(notes = "The date of the execution")
+    private LocalDateTime date;
 
     @ApiModelProperty(notes = "Result of the code sent compilation")
     @OneToOne
