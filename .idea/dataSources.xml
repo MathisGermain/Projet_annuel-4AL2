@@ -15,5 +15,12 @@
       <jdbc-url>jdbc:postgresql://database.civc9uy99hlq.us-west-2.rds.amazonaws.com/level_up</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="level_up@database.civc9uy99hlq.us-west-2.rds.amazonaws.com [2]" uuid="70c19b5f-ec71-4106-8eac-037d9501bd3a">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://database.civc9uy99hlq.us-west-2.rds.amazonaws.com/level_up</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

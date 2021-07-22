@@ -10,7 +10,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "comment")
+@Entity(name = "comments")
 public class Comment {
 
         @SequenceGenerator(
