@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:fragmenth="exercice_form">
+
+    <form id="exercice" method="POST">
+        <div>
+            <input name="response" th:value="*{response}"/>
+            <input hidden="hidden" name="exercice_id" th:value="*{exercice_id}"/>
+            <input hidden="hidden" name="user_id" th:value="*{user_id}"/>
+            <input id="submitResponse" type="submit" value="Submit"/>
+        </div>
+    </form>
+</div>
+</body>
+</html>
