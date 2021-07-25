@@ -1071,6 +1071,7 @@ UC/16394
     </table>
     <table id="49" parent="27" name="session">
       <ObjectId>19346</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>postgres</Owner>
       <StateNumber>11019</StateNumber>
     </table>
@@ -1081,6 +1082,7 @@ UC/16394
     </table>
     <table id="51" parent="27" name="users">
       <ObjectId>19312</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>postgres</Owner>
       <StateNumber>11018</StateNumber>
     </table>
