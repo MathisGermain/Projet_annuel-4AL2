@@ -19,7 +19,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     private final TokenProvider tokenProvider;
 
     private static final String[] PUBLIC_ENDPOINTS = {
-            "/api/auth/**"
+            "/api/auth/**",
+            "/api/users/signin"
     };
 
     private static final String[] ADMIN_ENDPOINTS = {
