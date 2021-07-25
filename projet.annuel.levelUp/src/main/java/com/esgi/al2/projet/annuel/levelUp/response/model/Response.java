@@ -15,8 +15,6 @@ import java.time.LocalDateTime;
 @Entity(name = "responses")
 public class Response {
 
-
-
     @SequenceGenerator(
             name = "response_sequence",
             sequenceName = "response_sequence",
@@ -26,16 +24,15 @@ public class Response {
             strategy = GenerationType.SEQUENCE,
             generator = "response_sequence"
     )
-
-    @OneToOne
-    private User user;
-
-    @OneToOne
-    private Exercise exercise;
-
     @Id
     @Column(updatable = false, nullable = false)
     private Integer id;
+
+    @Column(name="user_id")
+    private Integer userid;
+
+    @Column(name="exercise_id")
+    private Integer exerciseid;
 
     @Column(name="codeSent")
     private String codeSent;

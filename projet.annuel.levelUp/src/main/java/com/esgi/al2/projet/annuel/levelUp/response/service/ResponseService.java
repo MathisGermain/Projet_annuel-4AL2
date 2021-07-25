@@ -24,15 +24,15 @@ public class ResponseService {
         return responseRepository.findById(id);
     }
 
-    public List<Response> findAllByUser(User user) {
-        return responseRepository.findAllByUser(user);
+    public List<Response> findAllByUser(Integer user) {
+        return responseRepository.findAllByUserid(user);
     }
 
-    public List<Response> findAllByExercise(Exercise exercise) {
-        return responseRepository.findAllByExercise(exercise);
+    public List<Response> findAllByExercise(Integer exercise) {
+        return responseRepository.findAllByExerciseid(exercise);
     }
 
-    public Optional<Response> findByUserAndExercise(User user, Exercise exercise) {
-        return responseRepository.findByUserAndExercise(user, exercise);
+    public Optional<Response> findByUserAndExercise(Integer user_id, Integer exercise_id) {
+        return responseRepository.findByUseridAndExerciseid(user_id, exercise_id);
     }
 }

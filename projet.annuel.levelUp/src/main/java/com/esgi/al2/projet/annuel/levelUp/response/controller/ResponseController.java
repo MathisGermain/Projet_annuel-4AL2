@@ -4,7 +4,6 @@ import com.esgi.al2.projet.annuel.levelUp.exception.DockerBuildException;
 import com.esgi.al2.projet.annuel.levelUp.exercise.model.Exercise;
 import com.esgi.al2.projet.annuel.levelUp.response.model.Response;
 import com.esgi.al2.projet.annuel.levelUp.response.service.ResponseService;
-import com.esgi.al2.projet.annuel.levelUp.user.model.User;
 import com.esgi.al2.projet.annuel.levelUp.exercise.service.ExerciseService;
 import com.esgi.al2.projet.annuel.levelUp.user.service.UserService;
 import lombok.AllArgsConstructor;
@@ -12,9 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
@@ -60,17 +57,12 @@ public class ResponseController {
     @GetMapping("/user/{user_id}")
     public List<Response> getAllUserResponses(@PathVariable Integer user_id) {
         //Gerer l'exception
-        Optional<User> _user = userService.findById(user_id);
-        User user = _user.stream().findFirst().get();
-        return responseService.findAllByUser(user);
+        return responseService.findAllByUser(user_id);
     }
 
     @GetMapping("/exercise/{exercise_id}")
     public List<Response> getAllExerciseResponses(@PathVariable Integer exercise_id) {
-        //Gerer l'exception
-        Optional<Exercise> _exercise = exerciseService.findById(exercise_id);
-        Exercise exercise = _exercise.stream().findFirst().get();
-        return responseService.findAllByExercise(exercise);
+        return responseService.findAllByExercise(exercise_id);
     }
 
     @GetMapping("/{id}")
@@ -80,11 +72,7 @@ public class ResponseController {
 
     @GetMapping
     public Optional<Response> getUserResponse(@RequestParam Integer user_id, @RequestParam Integer exercise_id){
-        Optional<User> _user = userService.findById(user_id);
-        User user = _user.stream().findFirst().get();
-        Optional<Exercise> _exercise = exerciseService.findById(exercise_id);
-        Exercise exercise = _exercise.stream().findFirst().get();
-        return responseService.findByUserAndExercise(user, exercise);
+        return responseService.findByUserAndExercise(user_id, exercise_id);
     }
 
     private ResponseEntity<Response> compiler(Response response, Languages language) throws Exception{
@@ -104,6 +92,10 @@ public class ResponseController {
             file += ".py";
         }
 
+        LocalDateTime date = LocalDateTime.now();
+
+        response.setDate(date);
+
         createEntrypointFile(language);
 
         saveUpOutput(response, folder + "/" + file);
@@ -111,13 +103,15 @@ public class ResponseController {
         String imageName = "compile" + new Date().getTime();
 
         try {
-          runCode(folder, imageName, response);
+          response = runCode(folder, imageName, response);
         } catch(DockerBuildException exception) {
             deleteFile(folder, file);
             throw exception;
         }
 
         deleteFile(folder, file);
+
+        responseService.create(response);
 
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -145,7 +139,7 @@ public class ResponseController {
         myWriter.close();
     }
 
-    private void runCode(String folder, String imageName, Response response) throws InterruptedException, IOException {
+    private Response runCode(String folder, String imageName, Response response) throws InterruptedException, IOException {
 
         int status = buildImage(folder, imageName);
 
@@ -158,7 +152,40 @@ public class ResponseController {
         Process process = processbuilder.start();
         status = process.waitFor();
 
-        response.setStatus(statusResponse(status));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+        StringBuilder builder = new StringBuilder();
+
+        boolean answer = compareResult(response, reader, builder);
+
+        response.setStatus(statusResponse(status, answer));
+
+        return response;
+    }
+
+    private boolean compareResult(Response response, BufferedReader reader, StringBuilder builder) throws IOException {
+        String line = null;
+
+        while ( (line = reader.readLine()) != null ) {
+            builder.append(line);
+            builder.append(System.getProperty("line.separator"));
+        }
+
+        if(line != null) {
+            builder.append(line);
+            builder.append(System.getProperty("line.separator"));
+        }
+
+        while ( (line = reader.readLine()) != null) {
+            builder.append(line);
+            builder.append(System.getProperty("line.separator"));
+        }
+
+        Optional<Exercise> optExercise = exerciseService.findById(response.getExerciseid());
+        Exercise exercise = optExercise.get();
+
+        System.out.println(builder.toString());
+
+        return exercise.getExpectedOutput().equals(builder);
     }
 
     private int buildImage(String folder, String imageName) throws InterruptedException, IOException {
@@ -168,12 +195,15 @@ public class ResponseController {
         return process.waitFor();
     }
 
-    private String statusResponse(int status) {
+    private String statusResponse(int status, boolean answer) {
 
         String statusResponse;
-        if(status == 0)
-            statusResponse = "Compiled";
-        else if(status == 2)
+        if(status == 0){
+            if(answer)
+                statusResponse = "Accepted";
+            else
+                statusResponse = "Wrong Answer";
+        } else if(status == 2)
             statusResponse = "Compilation Error";
         else if(status == 1)
             statusResponse = "Runtime Error";
