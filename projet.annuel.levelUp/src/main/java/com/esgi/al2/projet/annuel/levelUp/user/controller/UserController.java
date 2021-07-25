@@ -1,5 +1,6 @@
 package com.esgi.al2.projet.annuel.levelUp.user.controller;
 
+import com.esgi.al2.projet.annuel.levelUp.user.model.Login;
 import com.esgi.al2.projet.annuel.levelUp.user.service.UserService;
 import com.esgi.al2.projet.annuel.levelUp.user.model.User;
 import lombok.AllArgsConstructor;
@@ -20,10 +21,10 @@ public class UserController {
         return userService.create(user);
     }
 
-    @GetMapping("/signin")
-    public Optional<User> signInUser(@RequestBody String email, @RequestBody String password)
+    @PostMapping("/signin")
+    public Optional<User> signInUser(@RequestBody Login login)
     {
-        return userService.connect(email, password);
+        return userService.connect(login.getEmail(), login.getPassword());
 
     }
 

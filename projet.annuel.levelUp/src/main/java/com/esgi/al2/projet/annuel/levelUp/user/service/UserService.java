@@ -22,7 +22,7 @@ public class UserService {
     }
 
     public Optional<User> connect(String email, String password) {
-        Optional<User> user = userRepository.findByEmailAndPassword(email, password);
+        Optional<User> user = userRepository.findByEmail(email);
 
         return user;
     }
