@@ -1,7 +1,7 @@
 package com.esgi.al2.projet.annuel.levelUp.response.service;
 
 
-import com.esgi.al2.projet.annuel.levelUp.exercice.model.Exercise;
+import com.esgi.al2.projet.annuel.levelUp.exercise.model.Exercise;
 import com.esgi.al2.projet.annuel.levelUp.response.model.Response;
 import com.esgi.al2.projet.annuel.levelUp.user.model.User;
 import com.esgi.al2.projet.annuel.levelUp.response.repository.ResponseRepository;
@@ -35,7 +35,4 @@ public class ResponseService {
     public Optional<Response> findByUserAndExercise(User user, Exercise exercise) {
         return responseRepository.findByUserAndExercise(user, exercise);
     }
-
-
-
 }

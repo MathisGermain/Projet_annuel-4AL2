@@ -1,4 +1,4 @@
-package com.esgi.al2.projet.annuel.levelUp.exercice.model;
+package com.esgi.al2.projet.annuel.levelUp.exercise.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -37,5 +37,4 @@ public class Exercise {
     @CollectionTable(name="test", joinColumns=@JoinColumn(name="exercise_id"))
     @Column(name = "test_exercise")
     private List<String> test;
-
 }

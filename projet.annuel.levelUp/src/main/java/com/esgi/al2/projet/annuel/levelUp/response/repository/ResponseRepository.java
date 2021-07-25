@@ -1,6 +1,6 @@
 package com.esgi.al2.projet.annuel.levelUp.response.repository;
 
-import com.esgi.al2.projet.annuel.levelUp.exercice.model.Exercise;
+import com.esgi.al2.projet.annuel.levelUp.exercise.model.Exercise;
 import com.esgi.al2.projet.annuel.levelUp.response.model.Response;
 import com.esgi.al2.projet.annuel.levelUp.user.model.User;
 import org.jetbrains.annotations.NotNull;

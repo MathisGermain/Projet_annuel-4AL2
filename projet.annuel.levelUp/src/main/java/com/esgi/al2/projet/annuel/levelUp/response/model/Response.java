@@ -1,6 +1,6 @@
 package com.esgi.al2.projet.annuel.levelUp.response.model;
 
-import com.esgi.al2.projet.annuel.levelUp.exercice.model.Exercise;
+import com.esgi.al2.projet.annuel.levelUp.exercise.model.Exercise;
 import com.esgi.al2.projet.annuel.levelUp.user.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -40,8 +40,10 @@ public class Response {
     @Column(name="codeSent")
     private String codeSent;
 
+    @Column(name="status")
+    private String status;
+
     @Column(name="date")
     private LocalDateTime date;
-
 
 }
