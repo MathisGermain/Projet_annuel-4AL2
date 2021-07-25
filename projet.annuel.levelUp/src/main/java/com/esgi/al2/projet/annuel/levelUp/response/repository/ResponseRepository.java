@@ -1,6 +1,6 @@
 package com.esgi.al2.projet.annuel.levelUp.response.repository;
 
-import com.esgi.al2.projet.annuel.levelUp.exercice.model.Exercise;
+import com.esgi.al2.projet.annuel.levelUp.exercise.model.Exercise;
 import com.esgi.al2.projet.annuel.levelUp.response.model.Response;
 import com.esgi.al2.projet.annuel.levelUp.user.model.User;
 import org.jetbrains.annotations.NotNull;
@@ -11,11 +11,11 @@ import java.util.Optional;
 
 public interface ResponseRepository extends JpaRepository<Response, Integer> {
 
-    List<Response> findAllByUser(User user);
+    List<Response> findAllByUserid(Integer user_id);
 
-    List<Response> findAllByExercise(Exercise exercise);
+    List<Response> findAllByExerciseid(Integer exercise_id);
 
-    Optional<Response> findByUserAndExercise(User user, Exercise exercise);
+    Optional<Response> findByUseridAndExerciseid(Integer user_id, Integer exercise_id);
 
     @NotNull Optional<Response> findById(@NotNull Integer id);
 

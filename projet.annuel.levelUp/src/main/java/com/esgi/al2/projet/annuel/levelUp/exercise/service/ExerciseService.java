@@ -1,7 +1,7 @@
-package com.esgi.al2.projet.annuel.levelUp.exercice.service;
+package com.esgi.al2.projet.annuel.levelUp.exercise.service;
 
-import com.esgi.al2.projet.annuel.levelUp.exercice.model.Exercise;
-import com.esgi.al2.projet.annuel.levelUp.exercice.repository.ExerciseRepository;
+import com.esgi.al2.projet.annuel.levelUp.exercise.model.Exercise;
+import com.esgi.al2.projet.annuel.levelUp.exercise.repository.ExerciseRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

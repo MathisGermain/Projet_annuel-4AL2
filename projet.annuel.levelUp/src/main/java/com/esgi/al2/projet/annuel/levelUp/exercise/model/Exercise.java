@@ -1,11 +1,10 @@
-package com.esgi.al2.projet.annuel.levelUp.exercice.model;
+package com.esgi.al2.projet.annuel.levelUp.exercise.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -33,9 +32,6 @@ public class Exercise {
     @Column(name="content")
     private String content;
 
-    @ElementCollection
-    @CollectionTable(name="test", joinColumns=@JoinColumn(name="exercise_id"))
-    @Column(name = "test_exercise")
-    private List<String> test;
-
+    @Column(name="expectedOutput")
+    private String expectedOutput;
 }
