@@ -71,12 +71,6 @@
 			<artifactId>jjwt</artifactId>
 			<version>${jjwt.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>com.esgi.4al2</groupId>
-			<artifactId>projet.annuel.levelUp</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
