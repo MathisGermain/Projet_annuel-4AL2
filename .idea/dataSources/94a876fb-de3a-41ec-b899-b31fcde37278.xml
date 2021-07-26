@@ -790,7 +790,6 @@ true posixrules
     <database id="2" parent="1" name="level_up">
       <ObjectId>17092</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>11024</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
     <database id="3" parent="1" name="postgres">
@@ -895,27 +894,18 @@ default_transaction_read_only=off</Config>
     </tablespace>
     <schema id="25" parent="2" name="information_schema">
       <ObjectId>14014</ObjectId>
-      <Acl>10=UC/10
-U/10
-</Acl>
       <StateNumber>282</StateNumber>
       <Owner>rdsadmin</Owner>
     </schema>
     <schema id="26" parent="2" name="pg_catalog">
       <ObjectId>11</ObjectId>
       <Comment>system catalog schema</Comment>
-      <Acl>10=UC/10
-U/10
-</Acl>
       <StateNumber>275</StateNumber>
       <Owner>rdsadmin</Owner>
     </schema>
     <schema id="27" parent="2" name="public">
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
-      <Acl>16394=UC/16394
-UC/16394
-</Acl>
       <StateNumber>527</StateNumber>
       <Owner>postgres</Owner>
       <IntrospectionStateNumber>11025</IntrospectionStateNumber>
