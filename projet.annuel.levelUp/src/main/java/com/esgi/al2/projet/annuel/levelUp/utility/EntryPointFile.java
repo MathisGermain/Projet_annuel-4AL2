@@ -23,7 +23,7 @@ public class EntryPointFile     {
                 executionCommand +
                 "exit $?\n";
         OutputStream os = null;
-        os = new FileOutputStream(new File("utility_py/entrypoint.sh"));
+        os = new FileOutputStream(new File("projet.annuel.levelUp/utility_py/entrypoint.sh"));
         os.write(content.getBytes(), 0, content.length());
         os.close();
     }
@@ -43,7 +43,7 @@ public class EntryPointFile     {
                 executionCommand +
                 "exit $?\n";
         OutputStream os = null;
-        os = new FileOutputStream(new File("utility/entrypoint.sh"));
+        os = new FileOutputStream(new File("projet.annuel.levelUp/utility_py/entrypoint.sh"));
         os.write(content.getBytes(), 0, content.length());
         os.close();
     }
@@ -62,7 +62,7 @@ public class EntryPointFile     {
                 executionCommand +
                 "exit $?\n";
         OutputStream os = null;
-        os = new FileOutputStream(new File("utility_c/entrypoint.sh"));
+        os = new FileOutputStream(new File("projet.annuel.levelUp/utility_py/entrypoint.sh"));
         os.write(content.getBytes(), 0, content.length());
         os.close();
     }
@@ -81,7 +81,7 @@ public class EntryPointFile     {
                 executionCommand +
                 "exit $?\n";
         OutputStream os = null;
-        os = new FileOutputStream(new File("utility_cpp/entrypoint.sh"));
+        os = new FileOutputStream(new File("projet.annuel.levelUp/utility_py/entrypoint.sh"));
         os.write(content.getBytes(), 0, content.length());
         os.close();
     }

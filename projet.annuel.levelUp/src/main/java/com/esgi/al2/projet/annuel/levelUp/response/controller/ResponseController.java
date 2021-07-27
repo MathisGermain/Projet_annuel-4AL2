@@ -134,9 +134,16 @@ public class ResponseController {
         if (response.getCodeSent().isEmpty())
             return;
 
-        FileWriter myWriter = new FileWriter(file);
+        FileWriter myWriter = new FileWriter("projet.annuel.levelUp/"+ file);
         myWriter.write(response.getCodeSent());
         myWriter.close();
+    }
+
+    private int buildImage(String folder, String imageName) throws InterruptedException, IOException {
+        String[] dockerCommand = new String[] {"docker", "image", "build", "projet.annuel.levelUp/"+folder, "-t", imageName};
+        ProcessBuilder processbuilder = new ProcessBuilder(dockerCommand);
+        Process process = processbuilder.start();
+        return process.waitFor();
     }
 
     private Response runCode(String folder, String imageName, Response response) throws InterruptedException, IOException {
@@ -167,32 +174,20 @@ public class ResponseController {
 
         while ( (line = reader.readLine()) != null ) {
             builder.append(line);
-            builder.append(System.getProperty("line.separator"));
         }
 
         if(line != null) {
             builder.append(line);
-            builder.append(System.getProperty("line.separator"));
         }
 
         while ( (line = reader.readLine()) != null) {
             builder.append(line);
-            builder.append(System.getProperty("line.separator"));
         }
 
         Optional<Exercise> optExercise = exerciseService.findById(response.getExerciseid());
         Exercise exercise = optExercise.get();
 
-        System.out.println(builder.toString());
-
         return exercise.getExpectedOutput().equals(builder);
-    }
-
-    private int buildImage(String folder, String imageName) throws InterruptedException, IOException {
-        String[] dockerCommand = new String[] {"docker", "image", "build", folder, "-t", imageName};
-        ProcessBuilder processbuilder = new ProcessBuilder(dockerCommand);
-        Process process = processbuilder.start();
-        return process.waitFor();
     }
 
     private String statusResponse(int status, boolean answer) {
