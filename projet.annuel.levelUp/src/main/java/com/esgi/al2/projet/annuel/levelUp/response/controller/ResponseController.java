@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static com.esgi.al2.projet.annuel.levelUp.utility.EntryPointFile.*;
 
@@ -76,7 +77,6 @@ public class ResponseController {
     }
 
     private ResponseEntity<Response> compiler(Response response, Languages language) throws Exception{
-
         String folder = "utility";
         String file = "main";
         if(language == Languages.C) {
@@ -147,7 +147,6 @@ public class ResponseController {
     }
 
     private Response runCode(String folder, String imageName, Response response) throws InterruptedException, IOException {
-
         int status = buildImage(folder, imageName);
 
         if(status != 0) {
@@ -159,39 +158,26 @@ public class ResponseController {
         Process process = processbuilder.start();
         status = process.waitFor();
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-        StringBuilder builder = new StringBuilder();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream(), "UTF-8"));
 
-        boolean answer = compareResult(response, reader, builder);
+        boolean answer = compareResult(response, reader);
 
         response.setStatus(statusResponse(status, answer));
 
         return response;
     }
 
-    private boolean compareResult(Response response, BufferedReader reader, StringBuilder builder) throws IOException {
-        String line = null;
-
-        while ( (line = reader.readLine()) != null ) {
-            builder.append(line);
-        }
-
-        if(line != null) {
-            builder.append(line);
-        }
-
-        while ( (line = reader.readLine()) != null) {
-            builder.append(line);
-        }
+    private boolean compareResult(Response response, BufferedReader reader) throws IOException {
+        String result = reader.lines().collect(Collectors.joining());
 
         Optional<Exercise> optExercise = exerciseService.findById(response.getExerciseid());
         Exercise exercise = optExercise.get();
 
-        return exercise.getExpectedOutput().equals(builder);
+
+        return exercise.getExpectedOutput().equals(result);
     }
 
     private String statusResponse(int status, boolean answer) {
-
         String statusResponse;
         if(status == 0){
             if(answer)
