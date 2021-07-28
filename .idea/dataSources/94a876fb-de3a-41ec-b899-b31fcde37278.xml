@@ -1051,6 +1051,7 @@ UC/16394
     </sequence>
     <table id="45" parent="27" name="comments">
       <ObjectId>21446</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>postgres</Owner>
       <StateNumber>13551</StateNumber>
     </table>

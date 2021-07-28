@@ -26,7 +26,7 @@ public class CommentController {
     }
 
     @GetMapping("/user/{id_user}")
-    public List<Comment> getAllByUserId(@PathVariable Integer user_id) {
-        return commentService.findAllByuser_id(user_id);
+    public List<Comment> getAllByUserId(@PathVariable Integer id_user) {
+        return commentService.findAllByuser_id(id_user);
     }
 }
