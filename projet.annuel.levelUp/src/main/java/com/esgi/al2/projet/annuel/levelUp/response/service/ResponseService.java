@@ -1,13 +1,10 @@
 package com.esgi.al2.projet.annuel.levelUp.response.service;
 
 
-import com.esgi.al2.projet.annuel.levelUp.exercise.model.Exercise;
 import com.esgi.al2.projet.annuel.levelUp.response.model.Response;
-import com.esgi.al2.projet.annuel.levelUp.user.model.User;
 import com.esgi.al2.projet.annuel.levelUp.response.repository.ResponseRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -17,6 +14,8 @@ public class ResponseService {
     private final ResponseRepository responseRepository;
 
     public Response create(Response response) {
+        // check exist if()
+            responseRepository.delete(response);
         return responseRepository.save(response);
     }
 

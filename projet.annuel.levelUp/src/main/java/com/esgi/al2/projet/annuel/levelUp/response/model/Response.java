@@ -40,6 +40,9 @@ public class Response {
     @Column(name="status")
     private String status;
 
+    @Column(name="resultconsole")
+    private String resultconsole;
+
     @Column(name="date")
     private LocalDateTime date;
 

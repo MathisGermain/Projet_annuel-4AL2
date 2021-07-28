@@ -790,7 +790,7 @@ true posixrules
     <database id="2" parent="1" name="level_up">
       <ObjectId>17092</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>13426</IntrospectionStateNumber>
+      <IntrospectionStateNumber>13562</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
     <database id="3" parent="1" name="postgres">
@@ -918,7 +918,7 @@ UC/16394
 </Acl>
       <StateNumber>527</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>13427</IntrospectionStateNumber>
+      <IntrospectionStateNumber>13563</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="28" parent="2" name="plpgsql">
@@ -1019,16 +1019,16 @@ UC/16394
       <Type>index</Type>
     </access-method>
     <sequence id="40" parent="27" name="comment_sequence">
-      <ObjectId>21425</ObjectId>
+      <ObjectId>21438</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>12771</StateNumber>
+      <StateNumber>13547</StateNumber>
       <SequenceIdentity>null+50</SequenceIdentity>
       <DataType>bigint|0s</DataType>
     </sequence>
     <sequence id="41" parent="27" name="exercise_sequence">
-      <ObjectId>21427</ObjectId>
+      <ObjectId>21440</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>12772</StateNumber>
+      <StateNumber>13548</StateNumber>
       <DataType>bigint|0s</DataType>
     </sequence>
     <sequence id="42" parent="27" name="hibernate_sequence">
@@ -1038,31 +1038,31 @@ UC/16394
       <DataType>bigint|0s</DataType>
     </sequence>
     <sequence id="43" parent="27" name="response_sequence">
-      <ObjectId>21429</ObjectId>
+      <ObjectId>21442</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>12773</StateNumber>
+      <StateNumber>13549</StateNumber>
       <DataType>bigint|0s</DataType>
     </sequence>
     <sequence id="44" parent="27" name="user_sequence">
-      <ObjectId>21431</ObjectId>
+      <ObjectId>21444</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>12774</StateNumber>
+      <StateNumber>13550</StateNumber>
       <DataType>bigint|0s</DataType>
     </sequence>
     <table id="45" parent="27" name="comments">
-      <ObjectId>21388</ObjectId>
+      <ObjectId>21446</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>12766</StateNumber>
+      <StateNumber>13551</StateNumber>
     </table>
     <table id="46" parent="27" name="exercises">
-      <ObjectId>21393</ObjectId>
+      <ObjectId>21451</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>12767</StateNumber>
+      <StateNumber>13552</StateNumber>
     </table>
     <table id="47" parent="27" name="responses">
-      <ObjectId>21401</ObjectId>
+      <ObjectId>21459</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>12768</StateNumber>
+      <StateNumber>13553</StateNumber>
     </table>
     <table id="48" parent="27" name="results">
       <ObjectId>19304</ObjectId>
@@ -1070,9 +1070,9 @@ UC/16394
       <StateNumber>10999</StateNumber>
     </table>
     <table id="49" parent="27" name="session">
-      <ObjectId>21409</ObjectId>
+      <ObjectId>21467</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>12775</StateNumber>
+      <StateNumber>13556</StateNumber>
     </table>
     <table id="50" parent="27" name="test">
       <ObjectId>20808</ObjectId>
@@ -1080,44 +1080,44 @@ UC/16394
       <StateNumber>12112</StateNumber>
     </table>
     <table id="51" parent="27" name="users">
-      <ObjectId>21417</ObjectId>
+      <ObjectId>21475</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>12775</StateNumber>
+      <StateNumber>13556</StateNumber>
     </table>
     <column id="52" parent="45" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>12766</StateNumber>
+      <StateNumber>13551</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="53" parent="45" name="content">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>12766</StateNumber>
+      <StateNumber>13551</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="54" parent="45" name="date">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
-      <StateNumber>12766</StateNumber>
+      <StateNumber>13551</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="55" parent="45" name="response_id">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>12766</StateNumber>
+      <StateNumber>13551</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="56" parent="45" name="user_id">
       <Position>5</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>12766</StateNumber>
+      <StateNumber>13551</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <index id="57" parent="45" name="comments_pkey">
-      <ObjectId>21391</ObjectId>
-      <StateNumber>12766</StateNumber>
+      <ObjectId>21449</ObjectId>
+      <StateNumber>13551</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1126,8 +1126,8 @@ UC/16394
       <ClassIds>1978</ClassIds>
     </index>
     <key id="58" parent="45" name="comments_pkey">
-      <ObjectId>21392</ObjectId>
-      <StateNumber>12766</StateNumber>
+      <ObjectId>21450</ObjectId>
+      <StateNumber>13551</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>comments_pkey</UnderlyingIndexName>
@@ -1136,30 +1136,30 @@ UC/16394
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>12767</StateNumber>
+      <StateNumber>13552</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="60" parent="46" name="content">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>12767</StateNumber>
+      <StateNumber>13552</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="61" parent="46" name="expected_output">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>12767</StateNumber>
+      <StateNumber>13552</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="62" parent="46" name="title">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>12767</StateNumber>
+      <StateNumber>13552</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="63" parent="46" name="exercises_pkey">
-      <ObjectId>21399</ObjectId>
-      <StateNumber>12767</StateNumber>
+      <ObjectId>21457</ObjectId>
+      <StateNumber>13552</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1168,8 +1168,8 @@ UC/16394
       <ClassIds>1978</ClassIds>
     </index>
     <key id="64" parent="46" name="exercises_pkey">
-      <ObjectId>21400</ObjectId>
-      <StateNumber>12767</StateNumber>
+      <ObjectId>21458</ObjectId>
+      <StateNumber>13552</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>exercises_pkey</UnderlyingIndexName>
@@ -1178,42 +1178,48 @@ UC/16394
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>12768</StateNumber>
+      <StateNumber>13553</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="66" parent="47" name="code_sent">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>12768</StateNumber>
+      <StateNumber>13553</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="67" parent="47" name="date">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
-      <StateNumber>12768</StateNumber>
+      <StateNumber>13553</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="68" parent="47" name="exercise_id">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>12768</StateNumber>
+      <StateNumber>13553</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="69" parent="47" name="status">
+    <column id="69" parent="47" name="resultconsole">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>12768</StateNumber>
+      <StateNumber>13553</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="70" parent="47" name="user_id">
+    <column id="70" parent="47" name="status">
       <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>13553</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="71" parent="47" name="user_id">
+      <Position>7</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>12768</StateNumber>
+      <StateNumber>13553</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="71" parent="47" name="responses_pkey">
-      <ObjectId>21407</ObjectId>
-      <StateNumber>12768</StateNumber>
+    <index id="72" parent="47" name="responses_pkey">
+      <ObjectId>21465</ObjectId>
+      <StateNumber>13553</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1221,58 +1227,58 @@ UC/16394
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="72" parent="47" name="responses_pkey">
-      <ObjectId>21408</ObjectId>
-      <StateNumber>12768</StateNumber>
+    <key id="73" parent="47" name="responses_pkey">
+      <ObjectId>21466</ObjectId>
+      <StateNumber>13553</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>responses_pkey</UnderlyingIndexName>
     </key>
-    <column id="73" parent="48" name="id">
+    <column id="74" parent="48" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>10411</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="74" parent="48" name="creation_date">
+    <column id="75" parent="48" name="creation_date">
       <Position>2</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>10411</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="75" parent="48" name="last_modified_date">
+    <column id="76" parent="48" name="last_modified_date">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
       <StateNumber>10411</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="76" parent="48" name="output">
+    <column id="77" parent="48" name="output">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>10411</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="77" parent="48" name="verdict">
+    <column id="78" parent="48" name="verdict">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>10411</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="78" parent="48" name="response_id">
+    <column id="79" parent="48" name="response_id">
       <Position>6</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>10411</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="79" parent="48" name="expected_output">
+    <column id="80" parent="48" name="expected_output">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>10999</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="80" parent="48" name="results_pkey">
+    <index id="81" parent="48" name="results_pkey">
       <ObjectId>19310</ObjectId>
       <StateNumber>10411</StateNumber>
       <ColNames>id</ColNames>
@@ -1282,41 +1288,41 @@ UC/16394
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="81" parent="48" name="results_pkey">
+    <key id="82" parent="48" name="results_pkey">
       <ObjectId>19311</ObjectId>
       <StateNumber>10411</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>results_pkey</UnderlyingIndexName>
     </key>
-    <column id="82" parent="49" name="id">
+    <column id="83" parent="49" name="id">
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>12769</StateNumber>
+      <StateNumber>13554</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="83" parent="49" name="created_at">
+    <column id="84" parent="49" name="created_at">
       <Position>2</Position>
       <DataType>timestamp|0s</DataType>
-      <StateNumber>12769</StateNumber>
+      <StateNumber>13554</StateNumber>
       <TypeId>1114</TypeId>
     </column>
-    <column id="84" parent="49" name="token">
+    <column id="85" parent="49" name="token">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>12769</StateNumber>
+      <StateNumber>13554</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="85" parent="49" name="user_id">
+    <column id="86" parent="49" name="user_id">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>12769</StateNumber>
+      <StateNumber>13554</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="86" parent="49" name="session_pkey">
-      <ObjectId>21415</ObjectId>
-      <StateNumber>12769</StateNumber>
+    <index id="87" parent="49" name="session_pkey">
+      <ObjectId>21473</ObjectId>
+      <StateNumber>13554</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1325,82 +1331,82 @@ UC/16394
       <CollationNames>default</CollationNames>
       <ClassIds>3126</ClassIds>
     </index>
-    <key id="87" parent="49" name="session_pkey">
-      <ObjectId>21416</ObjectId>
-      <StateNumber>12769</StateNumber>
+    <key id="88" parent="49" name="session_pkey">
+      <ObjectId>21474</ObjectId>
+      <StateNumber>13554</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>session_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="88" parent="49" name="fkj3ffkfbfbdoh9uon462ow7lhl">
-      <ObjectId>21433</ObjectId>
-      <StateNumber>12775</StateNumber>
+    <foreign-key id="89" parent="49" name="fkj3ffkfbfbdoh9uon462ow7lhl">
+      <ObjectId>21483</ObjectId>
+      <StateNumber>13556</StateNumber>
       <ColNames>user_id</ColNames>
-      <RefTableId>21417</RefTableId>
+      <RefTableId>21475</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>users</RefTableName>
       <RefKeyName>users_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="89" parent="50" name="exercise_id">
+    <column id="90" parent="50" name="exercise_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>12109</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="90" parent="50" name="test_exercise">
+    <column id="91" parent="50" name="test_exercise">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <StateNumber>12109</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="91" parent="51" name="id">
+    <column id="92" parent="51" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>12770</StateNumber>
+      <StateNumber>13555</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="92" parent="51" name="email">
+    <column id="93" parent="51" name="email">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>12770</StateNumber>
+      <StateNumber>13555</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="93" parent="51" name="first_name">
+    <column id="94" parent="51" name="first_name">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>12770</StateNumber>
+      <StateNumber>13555</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="94" parent="51" name="last_name">
+    <column id="95" parent="51" name="last_name">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>12770</StateNumber>
+      <StateNumber>13555</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="95" parent="51" name="password">
+    <column id="96" parent="51" name="password">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>12770</StateNumber>
+      <StateNumber>13555</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="96" parent="51" name="role">
+    <column id="97" parent="51" name="role">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>12770</StateNumber>
+      <StateNumber>13555</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="97" parent="51" name="username">
+    <column id="98" parent="51" name="username">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>12770</StateNumber>
+      <StateNumber>13555</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="98" parent="51" name="users_pkey">
-      <ObjectId>21423</ObjectId>
-      <StateNumber>12770</StateNumber>
+    <index id="99" parent="51" name="users_pkey">
+      <ObjectId>21481</ObjectId>
+      <StateNumber>13555</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1408,9 +1414,9 @@ UC/16394
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="99" parent="51" name="users_pkey">
-      <ObjectId>21424</ObjectId>
-      <StateNumber>12770</StateNumber>
+    <key id="100" parent="51" name="users_pkey">
+      <ObjectId>21482</ObjectId>
+      <StateNumber>13555</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>

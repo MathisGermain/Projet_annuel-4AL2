@@ -57,7 +57,6 @@ public class ResponseController {
 
     @GetMapping("/user/{user_id}")
     public List<Response> getAllUserResponses(@PathVariable Integer user_id) {
-        //Gerer l'exception
         return responseService.findAllByUser(user_id);
     }
 
@@ -163,16 +162,15 @@ public class ResponseController {
         boolean answer = compareResult(response, reader);
 
         response.setStatus(statusResponse(status, answer));
-
+        response.setResultconsole(reader.lines().collect(Collectors.joining()));
         return response;
     }
 
     private boolean compareResult(Response response, BufferedReader reader) throws IOException {
         String result = reader.lines().collect(Collectors.joining());
-
+        System.out.println(result);
         Optional<Exercise> optExercise = exerciseService.findById(response.getExerciseid());
         Exercise exercise = optExercise.get();
-
 
         return exercise.getExpectedOutput().equals(result);
     }
