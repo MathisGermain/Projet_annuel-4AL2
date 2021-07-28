@@ -162,13 +162,14 @@ public class ResponseController {
         boolean answer = compareResult(response, reader);
 
         response.setStatus(statusResponse(status, answer));
-        response.setResultconsole(reader.lines().collect(Collectors.joining()));
+
         return response;
     }
 
     private boolean compareResult(Response response, BufferedReader reader) throws IOException {
         String result = reader.lines().collect(Collectors.joining());
-        System.out.println(result);
+
+        response.setResultconsole(result);
         Optional<Exercise> optExercise = exerciseService.findById(response.getExerciseid());
         Exercise exercise = optExercise.get();
 
