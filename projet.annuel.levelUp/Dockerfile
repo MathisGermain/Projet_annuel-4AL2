@@ -24,10 +24,10 @@ ADD entrypoint.sh entrypoint.sh
 
 RUN chmod a+x ./entrypoint.sh
 
-EXPOSE 8082
+EXPOSE 8080
 
 ENTRYPOINT ["./entrypoint.sh"]
 
 
 # Build image by typing the following command : "docker image build . -t compilertest"
-# Run the container by typing the following command : "docker container run -p 8080:8082 -v /var/run/docker.sock:/var/run/docker.sock -t compilertest"
+# Run the container by typing the following command : "docker container run -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock -t compilertest"

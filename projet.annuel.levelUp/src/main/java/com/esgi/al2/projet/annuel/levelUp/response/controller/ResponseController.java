@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static com.esgi.al2.projet.annuel.levelUp.utility.EntryPointFile.*;
 
@@ -56,7 +57,6 @@ public class ResponseController {
 
     @GetMapping("/user/{user_id}")
     public List<Response> getAllUserResponses(@PathVariable Integer user_id) {
-        //Gerer l'exception
         return responseService.findAllByUser(user_id);
     }
 
@@ -76,7 +76,6 @@ public class ResponseController {
     }
 
     private ResponseEntity<Response> compiler(Response response, Languages language) throws Exception{
-
         String folder = "utility";
         String file = "main";
         if(language == Languages.C) {
@@ -134,13 +133,19 @@ public class ResponseController {
         if (response.getCodeSent().isEmpty())
             return;
 
-        FileWriter myWriter = new FileWriter(file);
+        FileWriter myWriter = new FileWriter("projet.annuel.levelUp/"+ file);
         myWriter.write(response.getCodeSent());
         myWriter.close();
     }
 
-    private Response runCode(String folder, String imageName, Response response) throws InterruptedException, IOException {
+    private int buildImage(String folder, String imageName) throws InterruptedException, IOException {
+        String[] dockerCommand = new String[] {"docker", "image", "build", "projet.annuel.levelUp/"+folder, "-t", imageName};
+        ProcessBuilder processbuilder = new ProcessBuilder(dockerCommand);
+        Process process = processbuilder.start();
+        return process.waitFor();
+    }
 
+    private Response runCode(String folder, String imageName, Response response) throws InterruptedException, IOException {
         int status = buildImage(folder, imageName);
 
         if(status != 0) {
@@ -152,51 +157,26 @@ public class ResponseController {
         Process process = processbuilder.start();
         status = process.waitFor();
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-        StringBuilder builder = new StringBuilder();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream(), "UTF-8"));
 
-        boolean answer = compareResult(response, reader, builder);
+        boolean answer = compareResult(response, reader);
 
         response.setStatus(statusResponse(status, answer));
 
         return response;
     }
 
-    private boolean compareResult(Response response, BufferedReader reader, StringBuilder builder) throws IOException {
-        String line = null;
+    private boolean compareResult(Response response, BufferedReader reader) throws IOException {
+        String result = reader.lines().collect(Collectors.joining());
 
-        while ( (line = reader.readLine()) != null ) {
-            builder.append(line);
-            builder.append(System.getProperty("line.separator"));
-        }
-
-        if(line != null) {
-            builder.append(line);
-            builder.append(System.getProperty("line.separator"));
-        }
-
-        while ( (line = reader.readLine()) != null) {
-            builder.append(line);
-            builder.append(System.getProperty("line.separator"));
-        }
-
+        response.setResultconsole(result);
         Optional<Exercise> optExercise = exerciseService.findById(response.getExerciseid());
         Exercise exercise = optExercise.get();
 
-        System.out.println(builder.toString());
-
-        return exercise.getExpectedOutput().equals(builder);
-    }
-
-    private int buildImage(String folder, String imageName) throws InterruptedException, IOException {
-        String[] dockerCommand = new String[] {"docker", "image", "build", folder, "-t", imageName};
-        ProcessBuilder processbuilder = new ProcessBuilder(dockerCommand);
-        Process process = processbuilder.start();
-        return process.waitFor();
+        return exercise.getExpectedOutput().equals(result);
     }
 
     private String statusResponse(int status, boolean answer) {
-
         String statusResponse;
         if(status == 0){
             if(answer)

@@ -23,7 +23,7 @@ public class EntryPointFile     {
                 executionCommand +
                 "exit $?\n";
         OutputStream os = null;
-        os = new FileOutputStream(new File("utility_py/entrypoint.sh"));
+        os = new FileOutputStream(new File("projet.annuel.levelUp/utility_py/entrypoint.sh"));
         os.write(content.getBytes(), 0, content.length());
         os.close();
     }
@@ -32,8 +32,7 @@ public class EntryPointFile     {
     public static void createJavaEntrypointFile() {
         String executionCommand = "timeout --signal=SIGTERM " + 10 + " java " + "\n";
         String content = "#!/usr/bin/env bash\n" +
-                "mv main.java " + "\n" +
-                JAVA_COMMAND + "\n" +
+                JAVA_COMMAND + "main.java\n" +
                 "ret=$?\n" +
                 "if [ $ret -ne 0 ]\n" +
                 "then\n" +
@@ -43,7 +42,7 @@ public class EntryPointFile     {
                 executionCommand +
                 "exit $?\n";
         OutputStream os = null;
-        os = new FileOutputStream(new File("utility/entrypoint.sh"));
+        os = new FileOutputStream(new File("projet.annuel.levelUp/utility/entrypoint.sh"));
         os.write(content.getBytes(), 0, content.length());
         os.close();
     }
@@ -62,7 +61,7 @@ public class EntryPointFile     {
                 executionCommand +
                 "exit $?\n";
         OutputStream os = null;
-        os = new FileOutputStream(new File("utility_c/entrypoint.sh"));
+        os = new FileOutputStream(new File("projet.annuel.levelUp/utility_c/entrypoint.sh"));
         os.write(content.getBytes(), 0, content.length());
         os.close();
     }
@@ -81,7 +80,7 @@ public class EntryPointFile     {
                 executionCommand +
                 "exit $?\n";
         OutputStream os = null;
-        os = new FileOutputStream(new File("utility_cpp/entrypoint.sh"));
+        os = new FileOutputStream(new File("projet.annuel.levelUp/utility_cpp/entrypoint.sh"));
         os.write(content.getBytes(), 0, content.length());
         os.close();
     }

@@ -807,7 +807,11 @@ false Zulu
 13158||-9223372036854775808|U|G
 13158||10|U|G</Grants>
       <Owner>postgres</Owner>
+<<<<<<< HEAD:.idea/dataSources/551b8334-d984-4007-91e6-88f695ac5de8.xml
       <IntrospectionStateNumber>783</IntrospectionStateNumber>
+=======
+      <IntrospectionStateNumber>13562</IntrospectionStateNumber>
+>>>>>>> 346627d5322b59f62bd457124613a0ea1e4cbf5a:.idea/dataSources/94a876fb-de3a-41ec-b899-b31fcde37278.xml
       <Current>1</Current>
     </database>
     <database id="3" parent="1" name="postgres">
@@ -877,7 +881,11 @@ false Zulu
       <Comment>standard public schema</Comment>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
+<<<<<<< HEAD:.idea/dataSources/551b8334-d984-4007-91e6-88f695ac5de8.xml
       <IntrospectionStateNumber>784</IntrospectionStateNumber>
+=======
+      <IntrospectionStateNumber>13563</IntrospectionStateNumber>
+>>>>>>> 346627d5322b59f62bd457124613a0ea1e4cbf5a:.idea/dataSources/94a876fb-de3a-41ec-b899-b31fcde37278.xml
       <Current>1</Current>
     </schema>
     <extension id="18" parent="2" name="plpgsql">
@@ -977,6 +985,7 @@ false Zulu
       <HandlerId>335</HandlerId>
       <Type>index</Type>
     </access-method>
+<<<<<<< HEAD:.idea/dataSources/551b8334-d984-4007-91e6-88f695ac5de8.xml
     <sequence id="30" parent="17" name="comment_sequence">
       <ObjectId>16819</ObjectId>
       <Owner>postgres</Owner>
@@ -988,6 +997,19 @@ false Zulu
       <ObjectId>16821</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>767</StateNumber>
+=======
+    <sequence id="40" parent="27" name="comment_sequence">
+      <ObjectId>21438</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>13547</StateNumber>
+      <SequenceIdentity>null+50</SequenceIdentity>
+      <DataType>bigint|0s</DataType>
+    </sequence>
+    <sequence id="41" parent="27" name="exercise_sequence">
+      <ObjectId>21440</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>13548</StateNumber>
+>>>>>>> 346627d5322b59f62bd457124613a0ea1e4cbf5a:.idea/dataSources/94a876fb-de3a-41ec-b899-b31fcde37278.xml
       <DataType>bigint|0s</DataType>
     </sequence>
     <sequence id="32" parent="17" name="response_sequence">
@@ -996,6 +1018,7 @@ false Zulu
       <StateNumber>768</StateNumber>
       <DataType>bigint|0s</DataType>
     </sequence>
+<<<<<<< HEAD:.idea/dataSources/551b8334-d984-4007-91e6-88f695ac5de8.xml
     <sequence id="33" parent="17" name="user_sequence">
       <ObjectId>16825</ObjectId>
       <Owner>postgres</Owner>
@@ -1016,12 +1039,42 @@ false Zulu
       <ObjectId>16840</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>772</StateNumber>
+=======
+    <sequence id="43" parent="27" name="response_sequence">
+      <ObjectId>21442</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>13549</StateNumber>
+      <DataType>bigint|0s</DataType>
+    </sequence>
+    <sequence id="44" parent="27" name="user_sequence">
+      <ObjectId>21444</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>13550</StateNumber>
+      <DataType>bigint|0s</DataType>
+    </sequence>
+    <table id="45" parent="27" name="comments">
+      <ObjectId>21446</ObjectId>
+      <Outdated>1</Outdated>
+      <Owner>postgres</Owner>
+      <StateNumber>13551</StateNumber>
+    </table>
+    <table id="46" parent="27" name="exercises">
+      <ObjectId>21451</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>13552</StateNumber>
+    </table>
+    <table id="47" parent="27" name="responses">
+      <ObjectId>21459</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>13553</StateNumber>
+>>>>>>> 346627d5322b59f62bd457124613a0ea1e4cbf5a:.idea/dataSources/94a876fb-de3a-41ec-b899-b31fcde37278.xml
     </table>
     <table id="37" parent="17" name="session">
       <ObjectId>16848</ObjectId>
       <Owner>postgres</Owner>
       <StateNumber>775</StateNumber>
     </table>
+<<<<<<< HEAD:.idea/dataSources/551b8334-d984-4007-91e6-88f695ac5de8.xml
     <table id="38" parent="17" name="test">
       <ObjectId>16787</ObjectId>
       <Owner>postgres</Owner>
@@ -1037,35 +1090,78 @@ false Zulu
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>770</StateNumber>
+=======
+    <table id="49" parent="27" name="session">
+      <ObjectId>21467</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>13556</StateNumber>
+    </table>
+    <table id="50" parent="27" name="test">
+      <ObjectId>20808</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>12112</StateNumber>
+    </table>
+    <table id="51" parent="27" name="users">
+      <ObjectId>21475</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>13556</StateNumber>
+    </table>
+    <column id="52" parent="45" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13551</StateNumber>
+>>>>>>> 346627d5322b59f62bd457124613a0ea1e4cbf5a:.idea/dataSources/94a876fb-de3a-41ec-b899-b31fcde37278.xml
       <TypeId>23</TypeId>
     </column>
     <column id="41" parent="34" name="content">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
+<<<<<<< HEAD:.idea/dataSources/551b8334-d984-4007-91e6-88f695ac5de8.xml
       <StateNumber>770</StateNumber>
+=======
+      <StateNumber>13551</StateNumber>
+>>>>>>> 346627d5322b59f62bd457124613a0ea1e4cbf5a:.idea/dataSources/94a876fb-de3a-41ec-b899-b31fcde37278.xml
       <TypeId>1043</TypeId>
     </column>
     <column id="42" parent="34" name="date">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
+<<<<<<< HEAD:.idea/dataSources/551b8334-d984-4007-91e6-88f695ac5de8.xml
       <StateNumber>770</StateNumber>
+=======
+      <StateNumber>13551</StateNumber>
+>>>>>>> 346627d5322b59f62bd457124613a0ea1e4cbf5a:.idea/dataSources/94a876fb-de3a-41ec-b899-b31fcde37278.xml
       <TypeId>1114</TypeId>
     </column>
     <column id="43" parent="34" name="response_id">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
+<<<<<<< HEAD:.idea/dataSources/551b8334-d984-4007-91e6-88f695ac5de8.xml
       <StateNumber>770</StateNumber>
+=======
+      <StateNumber>13551</StateNumber>
+>>>>>>> 346627d5322b59f62bd457124613a0ea1e4cbf5a:.idea/dataSources/94a876fb-de3a-41ec-b899-b31fcde37278.xml
       <TypeId>23</TypeId>
     </column>
     <column id="44" parent="34" name="user_id">
       <Position>5</Position>
       <DataType>integer|0s</DataType>
+<<<<<<< HEAD:.idea/dataSources/551b8334-d984-4007-91e6-88f695ac5de8.xml
       <StateNumber>770</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <index id="45" parent="34" name="comments_pkey">
       <ObjectId>16830</ObjectId>
       <StateNumber>770</StateNumber>
+=======
+      <StateNumber>13551</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="57" parent="45" name="comments_pkey">
+      <ObjectId>21449</ObjectId>
+      <StateNumber>13551</StateNumber>
+>>>>>>> 346627d5322b59f62bd457124613a0ea1e4cbf5a:.idea/dataSources/94a876fb-de3a-41ec-b899-b31fcde37278.xml
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1073,9 +1169,15 @@ false Zulu
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
+<<<<<<< HEAD:.idea/dataSources/551b8334-d984-4007-91e6-88f695ac5de8.xml
     <key id="46" parent="34" name="comments_pkey">
       <ObjectId>16831</ObjectId>
       <StateNumber>770</StateNumber>
+=======
+    <key id="58" parent="45" name="comments_pkey">
+      <ObjectId>21450</ObjectId>
+      <StateNumber>13551</StateNumber>
+>>>>>>> 346627d5322b59f62bd457124613a0ea1e4cbf5a:.idea/dataSources/94a876fb-de3a-41ec-b899-b31fcde37278.xml
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>comments_pkey</UnderlyingIndexName>
@@ -1084,6 +1186,7 @@ false Zulu
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
+<<<<<<< HEAD:.idea/dataSources/551b8334-d984-4007-91e6-88f695ac5de8.xml
       <StateNumber>771</StateNumber>
       <TypeId>23</TypeId>
     </column>
@@ -1108,6 +1211,32 @@ false Zulu
     <index id="51" parent="35" name="exercises_pkey">
       <ObjectId>16838</ObjectId>
       <StateNumber>771</StateNumber>
+=======
+      <StateNumber>13552</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="60" parent="46" name="content">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>13552</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="61" parent="46" name="expected_output">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>13552</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="62" parent="46" name="title">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>13552</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="63" parent="46" name="exercises_pkey">
+      <ObjectId>21457</ObjectId>
+      <StateNumber>13552</StateNumber>
+>>>>>>> 346627d5322b59f62bd457124613a0ea1e4cbf5a:.idea/dataSources/94a876fb-de3a-41ec-b899-b31fcde37278.xml
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1115,13 +1244,20 @@ false Zulu
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
+<<<<<<< HEAD:.idea/dataSources/551b8334-d984-4007-91e6-88f695ac5de8.xml
     <key id="52" parent="35" name="exercises_pkey">
       <ObjectId>16839</ObjectId>
       <StateNumber>771</StateNumber>
+=======
+    <key id="64" parent="46" name="exercises_pkey">
+      <ObjectId>21458</ObjectId>
+      <StateNumber>13552</StateNumber>
+>>>>>>> 346627d5322b59f62bd457124613a0ea1e4cbf5a:.idea/dataSources/94a876fb-de3a-41ec-b899-b31fcde37278.xml
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>exercises_pkey</UnderlyingIndexName>
     </key>
+<<<<<<< HEAD:.idea/dataSources/551b8334-d984-4007-91e6-88f695ac5de8.xml
     <column id="53" parent="36" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
@@ -1136,32 +1272,53 @@ false Zulu
       <TypeId>1043</TypeId>
     </column>
     <column id="55" parent="36" name="date">
-      <Position>3</Position>
-      <DataType>timestamp|0s</DataType>
-      <StateNumber>772</StateNumber>
-      <TypeId>1114</TypeId>
-    </column>
-    <column id="56" parent="36" name="exercise_id">
-      <Position>4</Position>
+=======
+    <column id="65" parent="47" name="id">
+      <Position>1</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>772</StateNumber>
+      <NotNull>1</NotNull>
+      <StateNumber>13553</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="57" parent="36" name="status">
-      <Position>5</Position>
+    <column id="66" parent="47" name="code_sent">
+      <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
-      <StateNumber>772</StateNumber>
+      <StateNumber>13553</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="58" parent="36" name="user_id">
-      <Position>6</Position>
+    <column id="67" parent="47" name="date">
+      <Position>3</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>13553</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="68" parent="47" name="exercise_id">
+      <Position>4</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>772</StateNumber>
+      <StateNumber>13553</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="59" parent="36" name="responses_pkey">
-      <ObjectId>16846</ObjectId>
-      <StateNumber>772</StateNumber>
+    <column id="69" parent="47" name="resultconsole">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>13553</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="70" parent="47" name="status">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>13553</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="71" parent="47" name="user_id">
+      <Position>7</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>13553</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="72" parent="47" name="responses_pkey">
+      <ObjectId>21465</ObjectId>
+      <StateNumber>13553</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1169,13 +1326,100 @@ false Zulu
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="60" parent="36" name="responses_pkey">
-      <ObjectId>16847</ObjectId>
-      <StateNumber>772</StateNumber>
+    <key id="73" parent="47" name="responses_pkey">
+      <ObjectId>21466</ObjectId>
+      <StateNumber>13553</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>responses_pkey</UnderlyingIndexName>
     </key>
+    <column id="74" parent="48" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>10411</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="75" parent="48" name="creation_date">
+      <Position>2</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>10411</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="76" parent="48" name="last_modified_date">
+>>>>>>> 346627d5322b59f62bd457124613a0ea1e4cbf5a:.idea/dataSources/94a876fb-de3a-41ec-b899-b31fcde37278.xml
+      <Position>3</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>772</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+<<<<<<< HEAD:.idea/dataSources/551b8334-d984-4007-91e6-88f695ac5de8.xml
+    <column id="56" parent="36" name="exercise_id">
+=======
+    <column id="77" parent="48" name="output">
+>>>>>>> 346627d5322b59f62bd457124613a0ea1e4cbf5a:.idea/dataSources/94a876fb-de3a-41ec-b899-b31fcde37278.xml
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>772</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+<<<<<<< HEAD:.idea/dataSources/551b8334-d984-4007-91e6-88f695ac5de8.xml
+    <column id="57" parent="36" name="status">
+=======
+    <column id="78" parent="48" name="verdict">
+>>>>>>> 346627d5322b59f62bd457124613a0ea1e4cbf5a:.idea/dataSources/94a876fb-de3a-41ec-b899-b31fcde37278.xml
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>772</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+<<<<<<< HEAD:.idea/dataSources/551b8334-d984-4007-91e6-88f695ac5de8.xml
+    <column id="58" parent="36" name="user_id">
+=======
+    <column id="79" parent="48" name="response_id">
+>>>>>>> 346627d5322b59f62bd457124613a0ea1e4cbf5a:.idea/dataSources/94a876fb-de3a-41ec-b899-b31fcde37278.xml
+      <Position>6</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>772</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+<<<<<<< HEAD:.idea/dataSources/551b8334-d984-4007-91e6-88f695ac5de8.xml
+    <index id="59" parent="36" name="responses_pkey">
+      <ObjectId>16846</ObjectId>
+      <StateNumber>772</StateNumber>
+=======
+    <column id="80" parent="48" name="expected_output">
+      <Position>7</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>10999</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="81" parent="48" name="results_pkey">
+      <ObjectId>19310</ObjectId>
+      <StateNumber>10411</StateNumber>
+>>>>>>> 346627d5322b59f62bd457124613a0ea1e4cbf5a:.idea/dataSources/94a876fb-de3a-41ec-b899-b31fcde37278.xml
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
+    </index>
+<<<<<<< HEAD:.idea/dataSources/551b8334-d984-4007-91e6-88f695ac5de8.xml
+    <key id="60" parent="36" name="responses_pkey">
+      <ObjectId>16847</ObjectId>
+      <StateNumber>772</StateNumber>
+=======
+    <key id="82" parent="48" name="results_pkey">
+      <ObjectId>19311</ObjectId>
+      <StateNumber>10411</StateNumber>
+>>>>>>> 346627d5322b59f62bd457124613a0ea1e4cbf5a:.idea/dataSources/94a876fb-de3a-41ec-b899-b31fcde37278.xml
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>responses_pkey</UnderlyingIndexName>
+    </key>
+<<<<<<< HEAD:.idea/dataSources/551b8334-d984-4007-91e6-88f695ac5de8.xml
     <column id="61" parent="37" name="id">
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
@@ -1204,6 +1448,36 @@ false Zulu
     <index id="65" parent="37" name="session_pkey">
       <ObjectId>16854</ObjectId>
       <StateNumber>773</StateNumber>
+=======
+    <column id="83" parent="49" name="id">
+      <Position>1</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13554</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="84" parent="49" name="created_at">
+      <Position>2</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>13554</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="85" parent="49" name="token">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>13554</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="86" parent="49" name="user_id">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>13554</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="87" parent="49" name="session_pkey">
+      <ObjectId>21473</ObjectId>
+      <StateNumber>13554</StateNumber>
+>>>>>>> 346627d5322b59f62bd457124613a0ea1e4cbf5a:.idea/dataSources/94a876fb-de3a-41ec-b899-b31fcde37278.xml
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1212,23 +1486,38 @@ false Zulu
       <CollationNames>default</CollationNames>
       <ClassIds>3126</ClassIds>
     </index>
+<<<<<<< HEAD:.idea/dataSources/551b8334-d984-4007-91e6-88f695ac5de8.xml
     <key id="66" parent="37" name="session_pkey">
       <ObjectId>16855</ObjectId>
       <StateNumber>773</StateNumber>
+=======
+    <key id="88" parent="49" name="session_pkey">
+      <ObjectId>21474</ObjectId>
+      <StateNumber>13554</StateNumber>
+>>>>>>> 346627d5322b59f62bd457124613a0ea1e4cbf5a:.idea/dataSources/94a876fb-de3a-41ec-b899-b31fcde37278.xml
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>session_pkey</UnderlyingIndexName>
     </key>
+<<<<<<< HEAD:.idea/dataSources/551b8334-d984-4007-91e6-88f695ac5de8.xml
     <foreign-key id="67" parent="37" name="fkj3ffkfbfbdoh9uon462ow7lhl">
       <ObjectId>16864</ObjectId>
       <StateNumber>775</StateNumber>
       <ColNames>user_id</ColNames>
       <RefTableId>16856</RefTableId>
+=======
+    <foreign-key id="89" parent="49" name="fkj3ffkfbfbdoh9uon462ow7lhl">
+      <ObjectId>21483</ObjectId>
+      <StateNumber>13556</StateNumber>
+      <ColNames>user_id</ColNames>
+      <RefTableId>21475</RefTableId>
+>>>>>>> 346627d5322b59f62bd457124613a0ea1e4cbf5a:.idea/dataSources/94a876fb-de3a-41ec-b899-b31fcde37278.xml
       <RefColPositions>1</RefColPositions>
       <RefTableName>users</RefTableName>
       <RefKeyName>users_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
+<<<<<<< HEAD:.idea/dataSources/551b8334-d984-4007-91e6-88f695ac5de8.xml
     <column id="68" parent="38" name="exercise_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
@@ -1288,6 +1577,67 @@ false Zulu
     <index id="77" parent="39" name="users_pkey">
       <ObjectId>16862</ObjectId>
       <StateNumber>774</StateNumber>
+=======
+    <column id="90" parent="50" name="exercise_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>12109</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="91" parent="50" name="test_exercise">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>12109</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="92" parent="51" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>13555</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="93" parent="51" name="email">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>13555</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="94" parent="51" name="first_name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>13555</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="95" parent="51" name="last_name">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>13555</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="96" parent="51" name="password">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>13555</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="97" parent="51" name="role">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>13555</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="98" parent="51" name="username">
+      <Position>7</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>13555</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="99" parent="51" name="users_pkey">
+      <ObjectId>21481</ObjectId>
+      <StateNumber>13555</StateNumber>
+>>>>>>> 346627d5322b59f62bd457124613a0ea1e4cbf5a:.idea/dataSources/94a876fb-de3a-41ec-b899-b31fcde37278.xml
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1295,9 +1645,15 @@ false Zulu
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
+<<<<<<< HEAD:.idea/dataSources/551b8334-d984-4007-91e6-88f695ac5de8.xml
     <key id="78" parent="39" name="users_pkey">
       <ObjectId>16863</ObjectId>
       <StateNumber>774</StateNumber>
+=======
+    <key id="100" parent="51" name="users_pkey">
+      <ObjectId>21482</ObjectId>
+      <StateNumber>13555</StateNumber>
+>>>>>>> 346627d5322b59f62bd457124613a0ea1e4cbf5a:.idea/dataSources/94a876fb-de3a-41ec-b899-b31fcde37278.xml
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
