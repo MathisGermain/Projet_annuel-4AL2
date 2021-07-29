@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
@@ -36,6 +37,6 @@ public class Comment {
         private String content;
 
         @Column(name="date")
-        private Date date;
+        private LocalDateTime date = LocalDateTime.now();
 
 }

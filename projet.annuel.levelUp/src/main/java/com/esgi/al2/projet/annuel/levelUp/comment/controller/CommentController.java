@@ -20,13 +20,13 @@ public class CommentController {
         return commentService.create(exercise);
     }
 
-    @GetMapping("/response")
-    public List<Comment> getAllByResponseId(@RequestBody Integer response_id) {
+    @GetMapping("/response/{response_id}")
+    public List<Comment> getAllByResponseId(@PathVariable Integer response_id) {
         return commentService.findAllByresponse_id(response_id);
     }
 
-    @GetMapping("/user")
-    public List<Comment> getAllByUserId(@RequestBody Integer user_id) {
+    @GetMapping("/user/{user_id}")
+    public List<Comment> getAllByUserId(@PathVariable Integer user_id) {
         return commentService.findAllByuser_id(user_id);
     }
 }
